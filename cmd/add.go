@@ -2,7 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"time"
 
+	"github.com/lem3s/go-for-it/model"
+	"github.com/lem3s/go-for-it/utils"
 	"github.com/spf13/cobra"
 )
 
@@ -29,5 +32,14 @@ var addCmd = &cobra.Command{
 }
 
 func add(cmd *cobra.Command, args []string) {
-	fmt.Println(args[0])
+	taskToAdd := model.Task{
+		Id:          utils.GetLastId() + 1,
+		Description: args[0],
+		DateCreated: time.Now(),
+		IsDone:      false,
+	}
+
+	utils.AddTaskToPersistance(taskToAdd)
+
+	fmt.Println("Task added successfully")
 }

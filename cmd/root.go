@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short: "A task manager built to practice Go",
 	Long: `Yet another to-do applicantion
 
-  You can use it to manege the things you need to do`,
+  You can use it to manage the things you need to do`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	// Run: func(cmd *cobra.Command, args []string) { },
